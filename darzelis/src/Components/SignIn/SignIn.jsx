@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
-import users from '../../Data/User';
+import users from '../../Data/Users';
 
 class SignIn extends Component {
     state = {
@@ -45,13 +45,16 @@ class SignIn extends Component {
                             type="password"
                             required onChange={event => this.setState({ password: event.target.value })} />
                     </div>
-                    <div>
+                    <div style={{ marginBottom: 20 }}>
                         <Button
                             variant="outlined"
                             disabled={this.state.username.length < 5 && this.state.password.length < 5}
                             onClick={() => TryToSignIn()}>
                             Sign in
                         </Button>
+                    </div>
+                    <div>
+                        <a href="/register">Register</a>
                     </div>
                 </form>
             </div>
