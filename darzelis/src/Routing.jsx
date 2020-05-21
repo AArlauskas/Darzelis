@@ -4,6 +4,7 @@ import SignInDisplay from './Containers/SignInDisplay';
 import RegisterDisplay from './Containers/RegisterDisplay';
 import HomeDisplay from './Containers/InfoDisplay';
 import Navigation from './Components/Navigation/Navigation';
+import CommentsDisplay from './Containers/CommentsDisplay/CommentsDisplay';
 import ChangeInfoDisplay from "./Containers/ChangeInfoDisplay";
 import ChangePassword from "./Components/ChangeInfo/ChangePassword";
 import ChangeEmail from "./Components/ChangeInfo/ChangeEmail";
@@ -26,6 +27,9 @@ class Routing extends Component {
                             <Navigation />
                             <Route path="/info">
                                 <HomeDisplay />
+                            </Route>
+                            <Route path="/comments">
+                                <CommentsDisplay />
                             </Route>
                             <Route path="/changeInfo" >
                                 <ChangeInfoDisplay />

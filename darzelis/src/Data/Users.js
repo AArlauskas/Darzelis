@@ -8,7 +8,7 @@ const users = [
         "email": "420@420.com",
         "phone": "+37000000000",
         "key": "AAAA-AAAA",
-        "childName": "user Jr.",
+        "childName": "User Jr.",
         "kindergarden": "Some place far away"
     },
     {

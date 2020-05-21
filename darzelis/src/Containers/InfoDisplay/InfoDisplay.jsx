@@ -16,7 +16,7 @@ class HomeDisplay extends Component {
                     <form>
                         <p>Name: {this.state.user.name}</p>
                         <p>Surname: {this.state.user.surname}</p>
-                        {this.state.user.childName !== null ?
+                        {this.state.user.childName !== undefined ?
                             <div>
                                 <hr style={{ width: 300 }} />
                                 <p>Child's name: {this.state.user.childName}</p>
