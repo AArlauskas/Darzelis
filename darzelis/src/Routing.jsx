@@ -10,7 +10,6 @@ class Routing extends Component {
     render() {
         return (
             <div>
-                {window.localStorage.getItem("isLoggedIn") === "true" ? <Navigation /> : null}
                 <Switch>
                     <Route exact path="/">
                         <SignInDisplay />
@@ -20,6 +19,7 @@ class Routing extends Component {
                     </Route>
                     {window.localStorage.getItem("isLoggedIn") === "true" ?
                         <React.Fragment>
+                            <Navigation />
                             <Route path="/info">
                                 <HomeDisplay />
                             </Route>

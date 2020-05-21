@@ -25,7 +25,10 @@ class SignIn extends Component {
         return (
             <div>
                 <h1 style={{ textAlign: "center" }}>Sign in</h1>
-                <form style={{ textAlign: "center", marginTop: 100 }}>
+                <form style={{ textAlign: "center", marginTop: 100 }} onSubmit={(e) => {
+                    e.preventDefault();
+                    TryToSignIn();
+                }}>
                     <div style={{ marginBottom: 15 }}>
                         <TextField
                             error={this.state.error}
@@ -47,9 +50,10 @@ class SignIn extends Component {
                     </div>
                     <div style={{ marginBottom: 20 }}>
                         <Button
+                            type="submit"
                             variant="outlined"
-                            disabled={this.state.username.length < 5 && this.state.password.length < 5}
-                            onClick={() => TryToSignIn()}>
+                            disabled={this.state.username.length < 5 || this.state.password.length < 5}
+                        >
                             Sign in
                         </Button>
                     </div>
