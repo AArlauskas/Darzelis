@@ -1,15 +1,21 @@
 const users = [
     {
         "username": "user",
-        "password": "user",
+        "password": "password",
+        "name": "Test name",
+        "surname": "Test username",
         "role": "user",
         "email": "420@420.com",
         "phone": "+37000000000",
-        "key": "AAAA-AAAA"
+        "key": "AAAA-AAAA",
+        "childName": "user Jr.",
+        "kindergarden": "Some place far away"
     },
     {
         "username": "admin",
         "password": "admin",
+        "name": "Admin name",
+        "surname": "Admin username",
         "role": "admin",
         "email": "bigSome@wronghousefool.com",
         "phone": "+37000000001",

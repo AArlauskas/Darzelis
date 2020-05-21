@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
-import users from '../../Data/Users';
 import ValidKeys from '../../Data/ValidKeys';
 
 class Register extends Component {
@@ -19,13 +18,14 @@ class Register extends Component {
         const TryToRegister = () => {
             ValidKeys.forEach(key => {
                 if (key.key === this.state.key) {
-                    users.push({
+                    let registered = {
                         username: this.state.username,
                         password: this.state.password,
                         email: this.state.email,
                         phone: this.state.number,
                         role: key.role
-                    });
+                    };
+                    window.localStorage.setItem("registered", JSON.stringify(registered));
                     window.location.href = "/";
                 }
             })

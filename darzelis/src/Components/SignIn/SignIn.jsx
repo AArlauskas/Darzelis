@@ -12,11 +12,11 @@ class SignIn extends Component {
     render() {
         const TryToSignIn = () => {
             users.forEach(user => {
-                if (user.username === this.state.username && user.password === this.state.password) {
+                if ((user.username === this.state.username && user.password === this.state.password) || (window.localStorage.getItem("registered") !== null && JSON.parse(window.localStorage.getItem("registered")).username === this.state.username)) {
                     window.localStorage.setItem("role", user.role);
                     window.localStorage.setItem("username", user.username);
                     window.localStorage.setItem("isLoggedIn", true);
-                    window.location.href = "/home"
+                    window.location.href = "/info"
                     return;
                 }
             })
