@@ -9,6 +9,7 @@ import ChangeInfoDisplay from "./Containers/ChangeInfoDisplay";
 import ChangePassword from "./Components/ChangeInfo/ChangePassword";
 import ChangeEmail from "./Components/ChangeInfo/ChangeEmail";
 import ChangePhone from "./Components/ChangeInfo/ChangePhone";
+import Achievements from "./Components/Achievements";
 
 class Routing extends Component {
     state = {}
@@ -42,6 +43,9 @@ class Routing extends Component {
                             </Route>
                             <Route path="/changePhone" >
                                 <ChangePhone />
+                            </Route>
+                            <Route path="/achievements" >
+                                <Achievements />
                             </Route>
                         </React.Fragment>
                         : <Redirect to="/" />}
