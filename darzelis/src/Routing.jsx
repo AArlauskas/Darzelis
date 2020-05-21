@@ -19,11 +19,12 @@ class Routing extends Component {
                         <RegisterDisplay />
                     </Route>
                     {window.localStorage.getItem("isLoggedIn") === "true" ?
-                        <div>
+                        <React.Fragment>
                             <Route path="/info">
                                 <HomeDisplay />
                             </Route>
-                        </div> : <Redirect to="/" />}
+                        </React.Fragment>
+                        : <Redirect to="/" />}
                 </Switch>
             </div>
         );

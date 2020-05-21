@@ -20,7 +20,8 @@ class HomeDisplay extends Component {
                             <div>
                                 <hr style={{ width: 300 }} />
                                 <p>Child's name: {this.state.user.childName}</p>
-                                <p>Kindergarden: {this.state.user.kindergarden}</p></div> : null}
+                                <p>Kindergarden: {this.state.user.kindergarden}</p>
+                            </div> : null}
                     </form>
                 </div>
             </div>);
