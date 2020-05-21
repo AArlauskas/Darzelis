@@ -4,6 +4,10 @@ import SignInDisplay from './Containers/SignInDisplay';
 import RegisterDisplay from './Containers/RegisterDisplay';
 import HomeDisplay from './Containers/InfoDisplay';
 import Navigation from './Components/Navigation/Navigation';
+import ChangeInfoDisplay from "./Containers/ChangeInfoDisplay";
+import ChangePassword from "./Components/ChangeInfo/ChangePassword";
+import ChangeEmail from "./Components/ChangeInfo/ChangeEmail";
+import ChangePhone from "./Components/ChangeInfo/ChangePhone";
 
 class Routing extends Component {
     state = {}
@@ -22,6 +26,18 @@ class Routing extends Component {
                             <Navigation />
                             <Route path="/info">
                                 <HomeDisplay />
+                            </Route>
+                            <Route path="/changeInfo" >
+                                <ChangeInfoDisplay />
+                            </Route>
+                            <Route path="/changePassword" >
+                                <ChangePassword />
+                            </Route>
+                            <Route path="/changeEmail" >
+                                <ChangeEmail />
+                            </Route>
+                            <Route path="/changePhone" >
+                                <ChangePhone />
                             </Route>
                         </React.Fragment>
                         : <Redirect to="/" />}
