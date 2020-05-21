@@ -4,6 +4,7 @@ import SignInDisplay from './Containers/SignInDisplay';
 import RegisterDisplay from './Containers/RegisterDisplay';
 import HomeDisplay from './Containers/InfoDisplay';
 import Navigation from './Components/Navigation/Navigation';
+import CommentsDisplay from './Containers/CommentsDisplay/CommentsDisplay';
 
 class Routing extends Component {
     state = {}
@@ -22,6 +23,9 @@ class Routing extends Component {
                         <React.Fragment>
                             <Route path="/info">
                                 <HomeDisplay />
+                            </Route>
+                            <Route path="/comments">
+                                <CommentsDisplay />
                             </Route>
                         </React.Fragment>
                         : <Redirect to="/" />}
