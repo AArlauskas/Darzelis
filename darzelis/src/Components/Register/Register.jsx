@@ -32,6 +32,7 @@ class Register extends Component {
         }
         return (
             <div>
+                <a href="/" style={{ textAlign: "left" }}>Back to sign in</a>
                 <h1 style={{ textAlign: "center" }}>Register</h1>
                 <form style={{ textAlign: "center", marginTop: 100 }}>
                     <div style={{ marginBottom: 15 }}>
