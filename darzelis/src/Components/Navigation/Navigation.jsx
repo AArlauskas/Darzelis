@@ -14,10 +14,11 @@ class Navigation extends Component {
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <Breadcrumbs>
                         <Link to="/info">Info</Link>
-                        {window.localStorage.getItem("role") === "admin" ? null : <Link to="/achievements">Achievements</Link>}
+                        {window.localStorage.getItem("role") === "admin" ? <Link to="/achievements">Achievements</Link> : null}
                         <Link to="/comments">Comments</Link>
                         <Link to="/changeInfo">Change information</Link>
                         {window.localStorage.getItem("role") === "admin" ? <Link to="/permisions">Permisions</Link> : null}
+                        {window.localStorage.getItem("role") === "admin" ? <Link to="/addEntry">Add entry</Link> : null}
                     </Breadcrumbs>
                 </div>
                 <div style={{ textAlign: "right", paddingLeft: 10 }}>

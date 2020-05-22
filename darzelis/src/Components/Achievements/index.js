@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import { Typography, Table, TableHead, TableRow, Grid, TableBody, Modal } from '@material-ui/core';
+import { Typography, Table, TableHead, TableRow, Grid, TableBody, Modal, TextField, Button } from '@material-ui/core';
 import MuiTableCell from '@material-ui/core/TableCell';
 import withStyles from "@material-ui/core/styles/withStyles";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import groups from "../../Data/Groups";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const TableCell = withStyles({
    root: {
@@ -15,8 +17,54 @@ const TableCell = withStyles({
 const Achievements = () => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    const [group, setGroup] = useState("");
+    const [child, setChild] = useState("");
+    const [buttonClicked, setButtonClicked] = useState(false);
 
-    return (
+    return window.localStorage.getItem("role") === "admin" && !buttonClicked ? (
+            <Grid container style={{ alignItems: "center", display: "flex", justifyContent: "center" }} direction="column" spacing={2}>
+                <Grid item>
+                    <TextField
+                        style={{ width: "100px", }}
+                        select
+                        label="Group"
+                        value={group}
+                        onChange={(e) => {
+                            setGroup(e.target.value);
+                            setChild("");
+                        }}
+                        helperText="Select group"
+                    >
+                        {groups.map(group => (
+                            <MenuItem key={group.name} value={group.name}>
+                                {group.name}
+                            </MenuItem>
+                        ))}
+                    </TextField>
+                </Grid>
+                <Grid item>
+                    <TextField
+                        style={{ width: "100px" }}
+                        select
+                        label="Child"
+                        value={child}
+                        onChange={(e) => setChild(e.target.value)}
+                        helperText="Select child"
+                    >
+                        {group === "" ? "" : groups.find((lGroup) => lGroup.name === group).children.map(child => (
+                            <MenuItem key={child.name} value={child.name}>
+                                {child.name}
+                            </MenuItem>
+                        ))}
+                    </TextField>
+                </Grid>
+                <Grid item>
+                    <Button type="submit" onClick={() => setButtonClicked(true)} disabled={child === ""} variant="contained">
+                        Go to achievements
+                    </Button>
+                </Grid>
+            </Grid>
+            ) : (
         <Grid container style={{ maxWidth: '100%'}} direction="column">
             <Grid item style={{textAlign: "center"}}>
                 <Typography variant="h3">Achievements</Typography>
