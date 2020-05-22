@@ -25,7 +25,7 @@ class Navigation extends Component {
                         <AddCommentIcon onClick={() => this.setState({ modalOpen: true })} />
                     </div>
                 </div>
-                <MessageSender open={this.state.modalOpen} onClose={() => this.setState({ modalOpen: "false" })} />
+                <MessageSender open={this.state.modalOpen} onClose={() => this.setState({ modalOpen: false })} />
             </div>
         );
     }
