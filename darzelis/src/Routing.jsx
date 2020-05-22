@@ -10,6 +10,7 @@ import ChangePassword from "./Components/ChangeInfo/ChangePassword";
 import ChangeEmail from "./Components/ChangeInfo/ChangeEmail";
 import ChangePhone from "./Components/ChangeInfo/ChangePhone";
 import Achievements from "./Components/Achievements";
+import PermisionsDisplay from './Containers/PermisionsDisplay/PermisionsDisplay';
 
 class Routing extends Component {
     state = {}
@@ -47,6 +48,9 @@ class Routing extends Component {
                             <Route path="/achievements" >
                                 <Achievements />
                             </Route>
+                            {window.localStorage.getItem("role") === "admin" ? <Route path="/permisions">
+                                <PermisionsDisplay />
+                            </Route> : null}
                         </React.Fragment>
                         : <Redirect to="/" />}
                 </Switch>
