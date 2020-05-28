@@ -53,7 +53,7 @@ class SignIn extends Component {
                         <Button
                             type="submit"
                             variant="outlined"
-                            disabled={this.state.username.length < 5 || this.state.password.length < 5}
+                            disabled={this.state.username.length < 4 || this.state.password.length < 4}
                         >
                             Sign in
                         </Button>
